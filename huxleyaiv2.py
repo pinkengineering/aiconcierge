@@ -4,9 +4,6 @@ import boto3
 import json
 from pinecone import Pinecone, Index
 
-st.write("AWS_ACCESS_KEY_ID:", os.getenv("AWS_ACCESS_KEY_ID"))
-st.write("AWS_SECRET_ACCESS_KEY:", os.getenv("AWS_SECRET_ACCESS_KEY"))
-
 # Initialize the Bedrock client
 client = boto3.client('bedrock-runtime', region_name='us-east-1')
 
@@ -125,5 +122,5 @@ if user_input:
 # Display the conversation history
 for i, (user_text, bot_response) in enumerate(st.session_state['history']):
     st.write(f"**You:** {user_text}")
-    st.write(f"**Bot:** {bot_response}")
+    st.write(f"**Huxley AI Concierge:** {bot_response}")
     st.write("---")
