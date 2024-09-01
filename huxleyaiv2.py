@@ -3,6 +3,9 @@ import boto3
 import json
 from pinecone import Pinecone, Index
 
+st.write("AWS_ACCESS_KEY_ID:", os.getenv("AWS_ACCESS_KEY_ID"))
+st.write("AWS_SECRET_ACCESS_KEY:", os.getenv("AWS_SECRET_ACCESS_KEY"))
+
 # Initialize the Bedrock client
 client = boto3.client('bedrock-runtime', region_name='us-east-1')
 
