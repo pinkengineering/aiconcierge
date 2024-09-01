@@ -1,7 +1,7 @@
+import os
 import streamlit as st
 import boto3
 import json
-import os
 from pinecone import Pinecone, Index
 
 st.write("AWS_ACCESS_KEY_ID:", os.getenv("AWS_ACCESS_KEY_ID"))
