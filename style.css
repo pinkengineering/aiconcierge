@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'Bodoni Moda SC';
+    src: url('./fonts/BodoniModaSC-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Bodoni Moda SC';
+    src: url('./fonts/BodoniModaSC-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: bold;
+}
+
+/* Apply Bodoni Moda SC font to the entire body */
+body {
+    font-family: 'Bodoni Moda SC', serif;
+}
+
+/* Apply Bodoni Moda SC font to the title and other headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bodoni Moda SC', serif;
+    font-weight: 700;
+}
+
+/* Apply the font to input fields and buttons */
+input, button, textarea {
+    font-family: 'Bodoni Moda SC', serif;
+}
+
+
+/* Set the entire app background to black */
+.stApp {
+    background-color: black;
+}
+
+/* Change font color for headers and paragraphs */
+h1, h2, h3, p, label {
+    color: white !important;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Style for text inputs and buttons */
+.stTextInput, .stButton {
+    background-color: #333333 !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Style submit button */
+.stButton button {
+    background-color: #555555 !important;
+    color: white !important;
+    border: none !important;
+}
+
+/* Add padding around the content */
+.block-container {
+    padding: 2rem;
+}
+
+/* Add custom link style */
+a {
+    color: #1f77b4 !important;
+    font-weight: bold;
+}
+
+/* Add a robot icon to the page title */
+.css-10trblm {
+    display: flex;
+    align-items: center;
+}
+
+.css-10trblm h1::before {
+    content: url('https://icon-library.com/images/robot-icon-png/robot-icon-png-18.jpg');
+    margin-right: 10px;
+}
+
+/* Hide Streamlit header */
+header {
+    visibility: hidden;
+}
+
+/* Hide Streamlit footer */
+footer {
+    visibility: hidden;
+}
+
+.left-aligned-image img {
+            float: left;  /* Align image to the left */
+            margin-right: 20px;  /* Add spacing between the image and the content */
+        }
+
+        
