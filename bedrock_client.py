@@ -33,33 +33,45 @@ def get_encoded_query(query):
     return embedding
 
 # Function to generate a response using Bedrock model
-def generate_response(prompt, context):
+def generate_response(prompt, context, image_data=None):
     try:
-        full_prompt = f'Human: {prompt}\n\nContext: {context}\n\nAssistant:'
+        messages = [
+            {
+                "role": "user",
+                "content": []
+            }
+        ]
+
+        if image_data:
+            messages[0]["content"].append({
+                "type": "image",
+                "source": {
+                    "type": "base64",
+                    "media_type": "image/jpeg",
+                    "data": image_data
+                }
+            })
+
+        messages[0]["content"].append({
+            "type": "text",
+            "text": f"{prompt}\n\nContext: {context}"
+        })
+
         payload = {
             "modelId": "anthropic.claude-3-haiku-20240307-v1:0",
             "contentType": "application/json",
-            "accept": "*/*",
+            "accept": "application/json",
             "body": json.dumps({
-                "prompt": full_prompt,
-                "max_tokens_to_sample": 200,
-                "temperature": 0.5,
-                "top_k": 250,
-                "top_p": 1,
-                "stop_sequences": ["\n\nHuman:"],
-                "anthropic_version": "bedrock-2023-05-31"
+                "anthropic_version": "bedrock-2023-05-31",
+                "max_tokens": 1000,
+                "messages": messages
             })
         }
 
-        response = client.invoke_model(
-            modelId=payload['modelId'],
-            body=payload['body'],
-            contentType=payload['contentType'],
-            accept=payload['accept']
-        )
+        response = client.invoke_model(**payload)
 
-        response_body = response['body'].read().decode('utf-8')
-        generated_text = json.loads(response_body)['completion']
+        response_body = json.loads(response['body'].read())
+        generated_text = response_body['content'][0]['text']
         return generated_text
 
     except Exception as e:
