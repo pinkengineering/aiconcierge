@@ -1,5 +1,5 @@
 
-# AI Cocierge
+# AI Concierge
 
 The AI Concierge is a sophisticated AI-powered assistant tailored for luxury condominium residents, providing personalized support and automation for daily needs, from scheduling services to organizing events. Built using AWS Bedrock and Claude 3 Haiku, it integrates with AWS Lambda and S3 to deliver seamless concierge experiences.
 
