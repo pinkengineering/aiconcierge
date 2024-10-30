@@ -37,7 +37,7 @@ def generate_response(prompt, context):
     try:
         full_prompt = f'Human: {prompt}\n\nContext: {context}\n\nAssistant:'
         payload = {
-            "modelId": "anthropic.claude-v2",
+            "modelId": "anthropic.claude-3-haiku-20240307-v1:0",
             "contentType": "application/json",
             "accept": "*/*",
             "body": json.dumps({

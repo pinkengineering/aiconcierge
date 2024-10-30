@@ -17,18 +17,18 @@ col1, col2 = st.columns([1, 2])  # Adjust the ratio to control the space distrib
 
 # Left column: Add the image
 with col1:
-    image = Image.open("Huxley_AI.png")  
-    st.image(image, caption="Huxley AI Concierge", width=200)  # Resize the image with width=200
+    image = Image.open("concierge.png")  
+    st.image(image, caption="All Rights Reserved", width=200)  # Resize the image with width=200
 
 # Right column: Add the title and input field
 with col2:
     # Main Streamlit App
-    st.title("Huxley AI Concierge")
+    st.title("Albert, The AI Concierge")
 
     user_input_temp = st.text_input("Hi, how can I help you today?")
 
     if st.button("Submit"):
-        with st.spinner("Huxley AI is thinking..."):
+        with st.spinner("Albert is thinking..."):
             try:
                 # Step 1: Encode query using Bedrock
                 encoded_query = get_encoded_query(user_input_temp)  # Get the query encoded using Bedrock
@@ -43,7 +43,7 @@ with col2:
                 response = generate_response(user_input_temp, context)
 
                 # Step 4: Display response in Streamlit
-                st.write(f"Huxley AI Concierge: {response}")
+                st.write(f"Albert: {response}")
 
                 if source_url:
                     # Step 5: Display the pre-signed URL as clickable text with the label "Source"
