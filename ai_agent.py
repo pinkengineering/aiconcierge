@@ -23,7 +23,7 @@ with col1:
 # Right column: Add the title and input field
 with col2:
     # Main Streamlit App
-    st.title("Albert, The AI Concierge")
+    st.title("Hello, I am Albert, The AI Concierge")
 
     user_input_temp = st.text_input("Hi, how can I help you today?")
 
